@@ -3,7 +3,6 @@ import { deserialize, serialize } from 'bson';
 import { Course } from '../../domain/Course';
 import { CourseRepository } from '../../domain/CourseRepository';
 
-
 export class FileCourseRepository implements CourseRepository {
    private FILE_PATH = `${__dirname}/courses`;
 

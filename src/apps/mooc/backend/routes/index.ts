@@ -24,10 +24,10 @@ export function validateReqSchema( req: Request, res: Response, next: Function) 
   // Aquí es un extra para añadir más verbosidad a los errores, para indicar que campos son exactamente los que fallan.
   const errors = validationErrors.array().map((err: ValidationError) => ({
     [err.param] : err.msg
-  }))
+  }));
 
   // Por último devolvemos la respuesta con nuestro error
   return res.status(httpStatus.UNPROCESSABLE_ENTITY).json({
     errors
-  })
+  });
 }

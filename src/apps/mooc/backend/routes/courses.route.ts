@@ -14,6 +14,6 @@ export const register = (router: Router) => {
   const coursePutController: CoursePutController = container.get('Apps.mooc.controllers.CoursePutController');
 
   router.put('/courses/:id', reqSchema, validateReqSchema, (req: Request, res: Response) => {
-    return coursePutController.run(req, res)
+    coursePutController.run(req, res);
   });
 };

@@ -10,7 +10,7 @@ export class CoursePutController implements Controller {
   async run(req: Request, res: Response) {
     const { name, duration } = req.body;
 
-    await this.courseCreator.run(req.params.id, name, duration);
+    await this.courseCreator.run({ id: req.params.id, name, duration });
 
     res.status(httpStatus.CREATED).send();
   }

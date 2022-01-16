@@ -3,7 +3,7 @@ import { Course } from '../../../../../src/Contexts/Mooc/Courses/domain/Course';
 
 export class CourseRepositoryMock implements CourseRepository {
 
-  saveMock: jest.Mock;
+  private saveMock: jest.Mock;
 
   constructor () {
     this.saveMock = jest.fn();
@@ -13,15 +13,12 @@ export class CourseRepositoryMock implements CourseRepository {
     this.saveMock(course);
   }
 
-  // private mockSave = jest.fn();
-
-
-  // async save(course: Course): Promise<void> {
-  //   this.mockSave(course);
-  // }
+  assertSaveHaveBeenCalledWidh(expected: Course): void {
+    expect(this.saveMock).toHaveBeenCalledWith(expected);
+  }
 
   // assertLastSavedCourseIs(expected: Course): void {
-  //   const mock = this.mockSave.mock;
+  //   const mock = this.saveMock.mock;
   //   const lastSavedCourse = mock.calls[mock.calls.length - 1][0] as Course;
   //   expect(lastSavedCourse).toBeInstanceOf(Course);
   //   expect(lastSavedCourse.id).toEqual(expected.id);

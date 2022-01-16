@@ -17,7 +17,7 @@ describe('CourseCreator', () => {
 
     await creator.run(id, name, duration);
 
-    expect(repository.saveMock).toHaveBeenCalledWith(expectedCourse);
+    repository.assertSaveHaveBeenCalledWidh(expectedCourse);
 
   });
 });

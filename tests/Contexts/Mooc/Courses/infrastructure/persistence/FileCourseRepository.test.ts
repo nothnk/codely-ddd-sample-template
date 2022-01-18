@@ -1,4 +1,5 @@
 import { Course } from "../../../../../../src/Contexts/Mooc/Courses/domain/Course";
+import { CourseDuration } from "../../../../../../src/Contexts/Mooc/Courses/domain/CourseDuration";
 import { CourseName } from "../../../../../../src/Contexts/Mooc/Courses/domain/CourseName";
 import { FileCourseRepository } from "../../../../../../src/Contexts/Mooc/Courses/infrastructure/persistence/FileCourseRepository";
 import { Uuid } from "../../../../../../src/Contexts/Shared/domain/value-object/Uuid";
@@ -8,7 +9,7 @@ describe('FileCourseRepository', () => {
 
     const id = new Uuid('bf566b2d-9840-451c-b6d4-95a7fd6db00d');
     const name = new CourseName('some-name');
-    const duration = 'some-duration';
+    const duration = new CourseDuration('some-duration');
 
     const course = new Course({id, name, duration});
 

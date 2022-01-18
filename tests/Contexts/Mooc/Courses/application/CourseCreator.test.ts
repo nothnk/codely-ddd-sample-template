@@ -4,6 +4,7 @@ import { Uuid } from '../../../../../src/Contexts/Shared/domain/value-object/Uui
 import { CourseCreator } from '../../../../../src/Contexts/Mooc/Courses/application/CourseCreator';
 import { CourseRepositoryMock } from '../__mocks__/CourseRepositoryMock';
 import { CourseName } from '../../../../../src/Contexts/Mooc/Courses/domain/CourseName';
+import { CourseDuration } from '../../../../../src/Contexts/Mooc/Courses/domain/CourseDuration';
 
 describe('CourseCreator', () => {
   it('should create a valid course', async () => {
@@ -16,7 +17,11 @@ describe('CourseCreator', () => {
 
     const creator = new CourseCreator(repository);
 
-    const expectedCourse = new Course({id: new Uuid(id), name: new CourseName(name), duration});
+    const expectedCourse = new Course({
+      id: new Uuid(id),
+      name: new CourseName(name),
+      duration: new CourseDuration(duration)
+    });
 
     await creator.run({id, name, duration});
 
@@ -34,7 +39,11 @@ describe('CourseCreator', () => {
     const duration = 'some-duration';
 
     expect(() => {
-      const expectedCourse = new Course({id: new Uuid(id), name: new CourseName(name), duration});
+      const expectedCourse = new Course({
+        id: new Uuid(id),
+        name: new CourseName(name),
+        duration: new CourseDuration(duration)
+      });
 
       creator.run({id: id, name, duration});
 

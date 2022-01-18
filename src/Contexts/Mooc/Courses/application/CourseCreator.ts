@@ -12,7 +12,11 @@ export class CourseCreator {
   }
 
   async run(request: CourseCreatorRequest): Promise<void> {
-    const course = new Course({ id: new Uuid(request.id), name: new CourseName(request.name), duration: request.duration });
+    const course = new Course({
+      id: new Uuid(request.id),
+      name: new CourseName(request.name),
+      duration: request.duration
+    });
 
     return this.repository.save(course);
   }

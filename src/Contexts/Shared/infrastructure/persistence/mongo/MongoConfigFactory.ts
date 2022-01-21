@@ -1,8 +1,8 @@
-import config from '../../config';
+import config from '../../../../Mooc/Shared/infrastructure/config';
 import MongoConfig from './MongoConfig';
 
 const mongoConfig = {
-  url: config.get('mogno.url')
+  url: config.get('mongo.url')
 };
 
 export class MongoConfigFactory {

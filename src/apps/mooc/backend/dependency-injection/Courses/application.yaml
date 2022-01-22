@@ -2,7 +2,7 @@ services:
 
   Mooc.MongoConfig:
     factory:
-      class: ../../../../../Contexts/Shared/infrastructure/persistence/mongo/MongoConfigFactory
+      class: ../../../../../Contexts/Mooc/Shared/infrastructure/persistence/mongo/MongoConfigFactory
       method: 'createConfig'
 
   Mooc.MongoClient:

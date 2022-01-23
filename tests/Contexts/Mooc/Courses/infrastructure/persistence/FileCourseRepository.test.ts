@@ -11,7 +11,7 @@ describe('FileCourseRepository', () => {
     const name = new CourseName('some-name');
     const duration = new CourseDuration('some-duration');
 
-    const course = new Course({id, name, duration});
+    const course = new Course(id, name, duration);
 
     const repository = new FileCourseRepository();
 
